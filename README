@@ -10,9 +10,6 @@ Copy code
 git clone https://github.com/yswathirekha/Sampletest.git
 Navigate to the Directory:
 
-bash
-Copy code
-cd string_test-python
 Run the Program:
 
 Replace your_input_string with the paragraph you want to test and page_width with the desired width for each line.
