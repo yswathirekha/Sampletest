@@ -1,0 +1,63 @@
+import unittest
+
+def justify_paragraph(paragraph, page_width):
+    words = paragraph.split()
+    lines = []
+    current_line = ''
+    
+    for word in words:
+        if len(current_line) + len(word) <= page_width:
+            if current_line:
+                current_line += ' '
+            current_line += word
+        else:
+            lines.append(current_line)
+            current_line = word
+    
+    if current_line:
+        lines.append(current_line)
+    
+    return lines
+
+class TestJustifyParagraph(unittest.TestCase):
+    def test_single_line(self):
+        paragraph = "This is a test."
+        page_width = 20
+        expected_output = ["This is a test."]
+        self.assertEqual(justify_paragraph(paragraph, page_width), expected_output)
+
+    def test_multiple_lines(self):
+        paragraph = "This is a sample text but a complicated problem to be solved, so we are adding more text to see that it actually works."
+        page_width = 20
+        expected_output = [
+            "This is a sample",
+            "text but a",
+            "complicated",
+            "problem to be",
+            "solved, so we are",
+            "adding more text",
+            "to see that it is",
+            "actually works."
+        ]
+        self.assertEqual(justify_paragraph(paragraph, page_width), expected_output)
+
+    def test_long_words(self):
+        paragraph = "This is a test withsupercalifragilisticexpialidocious"
+        page_width = 20
+        expected_output = ["This is a test", "withsupercalifragilisticexpialidocious"]
+        self.assertEqual(justify_paragraph(paragraph, page_width), expected_output)
+
+    def test_narrow_page_width(self):
+        paragraph = "This is a test."
+        page_width = 10
+        expected_output = ["This is a", "test."]
+        self.assertEqual(justify_paragraph(paragraph, page_width), expected_output)
+
+    def test_empty_paragraph(self):
+        paragraph = ""
+        page_width = 20
+        expected_output = [""]
+        self.assertEqual(justify_paragraph(paragraph, page_width), expected_output)
+
+if __name__ == "__main__":
+    unittest.main()
