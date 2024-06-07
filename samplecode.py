@@ -1,4 +1,4 @@
-def justify_paragraph(paragraph, page_width):
+def string_test(paragraph, page_width):
     words = paragraph.split()
     lines = []
     current_line = ''
@@ -20,6 +20,6 @@ def justify_paragraph(paragraph, page_width):
 # Sample input string
 paragraph = "This is a sample text but a complicated problem to be solved, so we are adding more text to see that it actually works."
 page_width = 20
-justified_paragraph = justify_paragraph(paragraph, page_width)
-for i, line in enumerate(justified_paragraph, 1):
+string_test = string_test(paragraph, page_width)
+for i, line in enumerate(string_test, 1):
     print(f"Array[{i}] = \"{line}\"")
