@@ -1,0 +1,30 @@
+This Python program accepts a paragraph string and a page width as parameters and returns an array of left and right justified strings, ensuring that no words are broken.
+
+Prerequisites
+Python 3.x installed on your system.
+Steps to Execute:
+Clone the Repository:
+
+bash
+Copy code
+git clone https://github.com/yswathirekha/Sampletest.git
+Navigate to the Directory:
+
+bash
+Copy code
+cd justify-paragraph-python
+Run the Program:
+
+Replace your_input_string with the paragraph you want to justify and page_width with the desired width for each line.
+
+bash
+Copy code
+python samplecode.py
+Example:
+
+bash
+Copy code
+python samplecode.py
+View the Output:
+
+The program will display the justified lines as per the provided paragraph and page width.
